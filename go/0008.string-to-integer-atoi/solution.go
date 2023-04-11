@@ -1,4 +1,4 @@
-// Created by Bob at 2023/03/30 16:00
+// Created by luocy at 2023/03/30 16:00
 // https://leetcode.com/problems/string-to-integer-atoi/
 
 /*

@@ -1,4 +1,4 @@
-// Created by Bob at 2023/04/11 09:24
+// Created by luocy at 2023/04/11 09:24
 // https://leetcode.com/problems/minimum-size-subarray-sum/
 
 /*

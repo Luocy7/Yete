@@ -1,4 +1,4 @@
-// Created by Bob at 2023/03/30 15:04
+// Created by luocy at 2023/03/30 15:04
 // https://leetcode.com/problems/reverse-integer/
 
 /*

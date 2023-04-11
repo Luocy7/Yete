@@ -1,4 +1,4 @@
-// Created by Bob at 2023/03/30 11:33
+// Created by luocy at 2023/03/30 11:33
 // https://leetcode.com/problems/median-of-two-sorted-arrays/
 
 /*

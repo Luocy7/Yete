@@ -1,4 +1,4 @@
-// Created by Bob at 2023/03/30 20:39
+// Created by luocy at 2023/03/30 20:39
 // https://leetcode.com/problems/palindrome-number/
 
 /*

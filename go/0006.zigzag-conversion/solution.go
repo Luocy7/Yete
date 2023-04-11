@@ -1,4 +1,4 @@
-// Created by Bob at 2023/03/30 13:54
+// Created by luocy at 2023/03/30 13:54
 // https://leetcode.com/problems/zigzag-conversion/
 
 /*

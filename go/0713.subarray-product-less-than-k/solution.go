@@ -1,4 +1,4 @@
-// Created by Bob at 2023/04/11 09:43
+// Created by luocy at 2023/04/11 09:43
 // https://leetcode.com/problems/subarray-product-less-than-k/
 
 /*

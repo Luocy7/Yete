@@ -1,4 +1,4 @@
-// Created by Bob at 2023/03/30 11:48
+// Created by luocy at 2023/03/30 11:48
 // https://leetcode.com/problems/longest-palindromic-substring/
 
 /*
