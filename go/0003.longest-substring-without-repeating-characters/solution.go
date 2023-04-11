@@ -71,14 +71,14 @@ func lengthOfLongestSubstring1(s string) (ans int) {
 // lengthOfLongestSubstring2 Sliding Window
 func lengthOfLongestSubstring2(s string) (ans int) {
 	n := len(s)
-	m := make(map[byte]int)  // store the newest postion(start from 1) of a character
+	m := make(map[byte]int)  // store the newest position(start from 1) of a character
 	i := 0                   // left bound of the sliding window
 	for j := 0; j < n; j++ { // right bound of the sliding window
 		if _, ok := m[s[j]]; ok {
 			i = Max(m[s[j]], i)
 		}
 		ans = Max(ans, j-i+1) // `j-i+1` is the length of the sliding window
-		m[s[j]] = j + 1       // `j + 1` means newest postion(start from 1) of a character
+		m[s[j]] = j + 1       // `j + 1` means newest position(start from 1) of a character
 	}
 	return
 }
