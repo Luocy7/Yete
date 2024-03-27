@@ -1,33 +1,6 @@
-// Created by luocy at 2023/03/30 11:48
+// Created by luocy at 2024/03/27 21:52
+// leetgo: 1.4.3
 // https://leetcode.com/problems/longest-palindromic-substring/
-
-/*
-5. Longest Palindromic Substring (Medium)
-Given a string `s`, return the longestpalindromicsubstring in `s`.
-
-**Example 1:**
-
-```
-Input: s = "babad"
-Output: "bab"
-Explanation: "aba" is also a valid answer.
-
-```
-
-**Example 2:**
-
-```
-Input: s = "cbbd"
-Output: "bb"
-
-```
-
-**Constraints:**
-
-- `1 <= s.length <= 1000`
-- `s` consist of only digits and English letters.
-
-*/
 
 package main
 
@@ -41,7 +14,6 @@ import (
 
 // @lc code=begin
 
-// DP Time: O(n^2) Space: O(n^2)
 func longestPalindrome(s string) string {
 	n := len(s)
 	if n < 2 {
@@ -102,5 +74,6 @@ func main() {
 	stdin := bufio.NewReader(os.Stdin)
 	s := Deserialize[string](ReadLine(stdin))
 	ans := longestPalindrome(s)
-	fmt.Println("output: " + Serialize(ans))
+
+	fmt.Println("\noutput:", Serialize(ans))
 }

@@ -1,5 +1,3 @@
-target_case: 0
-
 input:
 "aa"
 "a"
@@ -17,15 +15,3 @@ input:
 ".*"
 output:
 true
-
-input:
-"aab"
-"c*a*b"
-output:
-true
-
-input:
-"mississippi"
-"mis*is*p*."
-output:
-false
