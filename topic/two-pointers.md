@@ -9,7 +9,7 @@
   - 一般用于寻找数组/双向链表中满足条件的**两个节点**；如果是寻找多个数，则先固定前 n-2 个数；
   - 为了不遗漏所有可能情况，可能要求数组**有序**；
   - **典型问题**：两数之和、三数之和三角形计数
-  - 
+
 - **同向双指针**
 
   [![img](https://github.com/seagle0128/Algorithm_Interview_Notes-Chinese/raw/master/_assets/TIM%E6%88%AA%E5%9B%BE20180928102605.png)](https://github.com/seagle0128/Algorithm_Interview_Notes-Chinese/blob/master/_assets/TIM截图20180928102605.png)
