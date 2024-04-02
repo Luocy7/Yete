@@ -15,12 +15,8 @@ import (
 // @lc code=begin
 
 func searchRange(nums []int, target int) (ans []int) {
-	l := len(nums)
-	if l < 1 || nums[0] > target || nums[l-1] < target {
-		return []int{-1, -1}
-	}
 	lower := lowerBound(nums, target)
-	if lower == l || nums[lower] != target {
+	if lower == len(nums) || nums[lower] != target {
 		return []int{-1, -1}
 	}
 	higher := lowerBound(nums, target+1) - 1
@@ -28,13 +24,39 @@ func searchRange(nums []int, target int) (ans []int) {
 }
 
 func lowerBound(nums []int, target int) int {
-	left, right := 0, len(nums)-1 // closed interval
-	for left <= right {
+	left, right := 0, len(nums)-1 // closed interval  [left, right]
+	for left <= right {           // interval is not empty
 		mid := left + (right-left)/2
 		if nums[mid] < target {
 			left = mid + 1 // bound reduce to [mid+1, right]
 		} else {
 			right = mid - 1 // bound reduce to [left, mid-1]
+		}
+	}
+	return left
+}
+
+func lowerBound2(nums []int, target int) int {
+	left, right := 0, len(nums) // [left, right)
+	for left < right {          // interval is not empty
+		mid := left + (right-left)/2
+		if nums[mid] < target {
+			left = mid + 1 // bound reduce to [mid+1, right)
+		} else {
+			right = mid // bound reduce to [left, mid)
+		}
+	}
+	return left
+}
+
+func lowerBound3(nums []int, target int) int {
+	left, right := -1, len(nums) // (left, right)
+	for left+1 < right {         // interval is not empty
+		mid := left + (right-left)/2
+		if nums[mid] < target {
+			left = mid // bound reduce to (mid, right)
+		} else {
+			right = mid // bound reduce to (left, mid)
 		}
 	}
 	return left
