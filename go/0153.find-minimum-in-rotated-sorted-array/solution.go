@@ -26,7 +26,7 @@ func findMin1(nums []int) (ans int) {
 		mid := left + (right-left)/2
 		if nums[mid] < nums[len(nums)-1] { // nums[mid] is k or in the right of k
 			right = mid
-		} else { // think: when does the left num bigger then the right num?
+		} else { // think: when does the left num bigger than the right num?
 			left = mid
 		}
 	}
