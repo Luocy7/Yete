@@ -19,7 +19,7 @@ func minOperations(nums []int, x int) (ans int) {
 	for _, num := range nums {
 		sum += num
 	}
-	target := sum - x
+	target := sum - x // transfer to get the longest sum of target
 	if target < 0 {
 		return -1
 	}
@@ -30,7 +30,7 @@ func minOperations(nums []int, x int) (ans int) {
 	for right < len(nums) {
 		cur += nums[right]
 		right++
-		for cur > target && left < right {
+		for cur > target && left < right { // when the sum of window is bigger than target then reduce left bound
 			cur -= nums[left]
 			left++
 		}
