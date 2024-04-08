@@ -8,6 +8,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"sort"
 
 	. "github.com/j178/leetgo/testutils/go"
 )
@@ -15,31 +16,31 @@ import (
 // @lc code=begin
 
 func threeSum(nums []int) (ans [][]int) {
+	sort.Ints(nums) // QuickSort
 	n := len(nums)
-	if n < 3 {
-		return
-	}
-
-	QuickSort(nums)
-
-	for i := 0; i < n; i++ {
-		if i > 0 && nums[i] == nums[i-1] {
+	for i, x := range nums[:n-2] {
+		if i > 0 && x == nums[i-1] { // when nums[i] == nums[i-1], skip duplicate num
 			continue
 		}
-		target := -nums[i]
-		k := n - 1
-		for j := i + 1; j < n; j++ {
-			if j > i+1 && nums[j] == nums[j-1] {
-				continue
-			}
-			for j < k && nums[j]+nums[k] > target {
+		if x+nums[i+1]+nums[i+2] > 0 { // x plus any 2 nums after nums[i+2] will > 0, so break
+			break
+		}
+		if x+nums[n-2]+nums[n-1] < 0 { // x plus biggest two nums will < 0, so add i
+			continue
+		}
+		j, k := i+1, n-1
+		for j < k {
+			s := x + nums[j] + nums[k]
+			if s > 0 {
 				k--
-			}
-			if j == k {
-				break
-			}
-			if nums[j]+nums[k] == target {
-				ans = append(ans, []int{nums[i], nums[j], nums[k]})
+			} else if s < 0 {
+				j++
+			} else {
+				ans = append(ans, []int{x, nums[j], nums[k]})
+				for j++; j < k && nums[j] == nums[j-1]; j++ {
+				} // 跳过重复数字
+				for k--; k > j && nums[k] == nums[k+1]; k-- {
+				} // 跳过重复数字
 			}
 		}
 	}
