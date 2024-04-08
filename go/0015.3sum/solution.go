@@ -18,11 +18,11 @@ import (
 func threeSum(nums []int) (ans [][]int) {
 	sort.Ints(nums) // QuickSort
 	n := len(nums)
-	for i, x := range nums[:n-2] {
-		if i > 0 && x == nums[i-1] { // when nums[i] == nums[i-1], skip duplicate num
+	for i, x := range nums[:n-2] { // i in [0, n-3]
+		if i > 0 && x == nums[i-1] { // when nums[i] == nums[i-1], skip duplicate nums
 			continue
 		}
-		if x+nums[i+1]+nums[i+2] > 0 { // x plus any 2 nums after nums[i+2] will > 0, so break
+		if x+nums[i+1]+nums[i+2] > 0 { // any x plus any 2 nums after x will > 0, so break
 			break
 		}
 		if x+nums[n-2]+nums[n-1] < 0 { // x plus biggest two nums will < 0, so add i
@@ -38,9 +38,9 @@ func threeSum(nums []int) (ans [][]int) {
 			} else {
 				ans = append(ans, []int{x, nums[j], nums[k]})
 				for j++; j < k && nums[j] == nums[j-1]; j++ {
-				} // 跳过重复数字
+				} // skip duplicate nums
 				for k--; k > j && nums[k] == nums[k+1]; k-- {
-				} // 跳过重复数字
+				} // skip duplicate nums
 			}
 		}
 	}
