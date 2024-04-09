@@ -28,13 +28,13 @@ func triangleNumber(nums []int) (ans int) {
 			continue
 		}
 		if nums[0]+nums[1] > x {
-			ans += (i - 1) * i / 2
+			ans += (i - 1) * i / 2 // choice any two nums in nums[:i-1] -- C(2,i-1)
 			continue
 		}
 
 		j, k := 0, i-1
 		for j < k {
-			if nums[j]+nums[k] > x {
+			if nums[j]+nums[k] > x { // nums[k] + any nums[i] in [j, k-1] is greater than x
 				ans += k - j
 				k--
 			} else {
