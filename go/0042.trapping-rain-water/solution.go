@@ -15,7 +15,7 @@ import (
 // @lc code=begin
 
 func trap(height []int) (ans int) {
-	return trap2(height)
+	return trap3(height)
 }
 
 func trap1(height []int) (ans int) {
@@ -57,6 +57,24 @@ func trap2(height []int) (ans int) {
 			ans += rightMax - height[j]
 			j--
 		}
+	}
+	return
+}
+
+func trap3(height []int) (ans int) {
+	st := []int{}
+	for i, h := range height {
+		for len(st) > 0 && h >= height[st[len(st)-1]] {
+			lastH := height[st[len(st)-1]]
+			st = st[:len(st)-1] // pop all height that less equal than `h` out from stack
+			if len(st) == 0 {
+				break
+			}
+			left := st[len(st)-1]
+			dh := Min(height[left], h) - lastH
+			ans += dh * (i - left - 1)
+		}
+		st = append(st, i) // push into stack
 	}
 	return
 }
