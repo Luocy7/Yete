@@ -5,7 +5,7 @@ language: en
 code:
   # Language of code generated for questions: go, python, ... 
   # (will be override by project config and flag --lang)
-  lang: go
+  lang: python
   # The default template to generate filename (without extension), e.g. {{.Id}}.{{.Slug}}
   # Available attributes: Id, Slug, Title, Difficulty, Lang, SlugIsMeaningful
   # Available functions: lower, upper, trim, padWithZero, toUnderscore, group
@@ -59,7 +59,7 @@ editor:
   # Set to 'none' to disable, set to 'custom' to provide your own command
   use: custom
   # Custom command to open files
-  command: "code"
+  command: "pycharm"
   # Arguments to the command.
   # String contains {{.CodeFile}}, {{.TestFile}}, {{.DescriptionFile}}, {{.TestCasesFile}} will be replaced with corresponding file path.
   # {{.Folder}} will be substituted with the output directory.
