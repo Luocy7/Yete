@@ -32,7 +32,7 @@ class Solution:
         for i in range(len(cards) - 1):
             for j in range(i + 1, len(cards)):
                 a, b = cards[i], cards[j]
-                ext = cards[0:i] + cards[i + 1: j] + cards[j + 1:]
+                ext = cards[0:i] + cards[i + 1 : j] + cards[j + 1 :]
                 if self.judgePoint24([a + b] + ext):
                     return True
                 if self.judgePoint24([a * b] + ext):
